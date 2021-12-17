@@ -15,7 +15,7 @@
         padding: 0;
         font-family: 'Raleway', sans-serif;
       }
-      .links{
+      #links{
         padding: 70px 0;
         display: flex;
         flex-wrap: wrap;
@@ -24,13 +24,13 @@
         width: 90%;
         margin: 0 auto;
       }
-      .links > a{
+      #links > a{
         border-radius: 1rem;
         background: #fff;
         box-shadow: 0 20px 70px 0 hsl(0deg 0% 82% / 40%);
         --webkit-box-shadow: 0px 20px 70px 0px hsla(0,0%,82%,.4);
         text-decoration: none;
-        display: inline-block;
+        display: block;
         text-align: center;
         flex: 18%;
         padding: 20px 0;
@@ -38,10 +38,26 @@
         font-weight: 400;
         transition: all .3s ease;
       }
-      .links > a:hover{
+      #links > a:hover{
         background: #5160ff;
         transition: all .3s ease;
         color: #fff;
+      }
+      #links .icon{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #5160ff3d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+      }
+      #links > a:hover .icon{
+        background: #f6f5fc;
+      }
+      #links .icon > svg{
+        color: #5160ff;
       }
       .heading{
         text-align: center;
@@ -70,20 +86,20 @@
       }
 
        @media only screen and (max-width: 992px) {
-        .links{
+        #links{
           padding: 30px 0;
         }
-        .links > a{
+        #links > a{
           flex: 30%;
           font-size: 1rem;
         }
       }
       @media only screen and (max-width: 620px) {
-        .links{
+        #links{
           padding: 30px 0;
           gap: 1rem;
         }
-        .links > a{
+        #links > a{
           flex: 45%;
           font-size: 0.8rem;
         }
@@ -91,48 +107,17 @@
 
     </style>
   </head>
-
   <body>
     <div class="heading">
       <h1>Sample Project Links</h1>
     </div>
-
-    <div class="links">
-      <a href="sp1/" target="blank">Sample Project 1</a>
-      <a href="sp2/" target="blank">Sample Project 2</a>
-      <a href="sp3/" target="blank">Sample Project 3</a>
-      <a href="sp4/" target="blank">Sample Project 4</a>
-      <a href="sp5/" target="blank">Sample Project 5</a>
-      <a href="sp6/" target="blank">Sample Project 6</a>
-      <a href="sp7/" target="blank">Sample Project 7</a>
-      <a href="sp8/" target="blank">Sample Project 8</a>
-      <a href="sp9/" target="blank">Sample Project 9</a>
-      <a href="sp10/" target="blank">Sample Project 10</a>
-      <a href="sp11/" target="blank">Sample Project 11</a>
-      <a href="sp12/" target="blank">Sample Project 12</a>
-      <a href="sp13/" target="blank">Sample Project 13</a>
-      <a href="sp14/" target="blank">Sample Project 14</a>
-      <a href="sp15/" target="blank">Sample Project 15</a>
-      <a href="sp16/" target="blank">Sample Project 16</a>
-      <a href="sp17/" target="blank">Sample Project 17</a>
-      <a href="sp18/" target="blank">Sample Project 18</a>
-      <a href="sp19/" target="blank">Sample Project 19</a>
-      <a href="sp20/" target="blank">Sample Project 20</a>
-      <a href="sp21/" target="blank">Sample Project 21</a>
-      <a href="sp22/" target="blank">Sample Project 22</a>
-      <a href="sp23/" target="blank">Sample Project 23</a>
-      <a href="sp24/" target="blank">Sample Project 24</a>
-      <a href="sp25/" target="blank">Sample Project 25</a>
-      <a href="sp26/" target="blank">Sample Project 26</a>
-      <a href="sp27/" target="blank">Sample Project 27</a>
-      <a href="sp28/" target="blank">Sample Project 28</a>
-      <a href="sp29/" target="blank">Sample Project 29</a>
-      <a href="sp30/" target="blank">Sample Project 30</a>
-      <a href="sp31/" target="blank">Sample Project 31</a>
-      <a href="sp32/" target="blank">Sample Project 32</a>
-      <a href="sp33/" target="blank">Sample Project 33</a>
-      </div>
-    </div>
-
+    <div id="links"></div>
+    <script>
+      let link = "";
+      for (let i = 1; i <= 33; i++) {
+        link += "<a href='sp" + i + "/' target='blank'><div class='icon'><svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' class='bi bi-link-45deg' viewBox='0 0 16 16'><path d='M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z'/><path d='M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z'/></svg></div>Sample Project " + i + "</a>";
+      }
+      document.getElementById("links").innerHTML = link;
+    </script>
   </body>
 </html>
