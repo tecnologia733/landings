@@ -52,11 +52,12 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto 15px;
+        font-weight: 700;
       }
       #links > a:hover .icon{
         background: #f6f5fc;
       }
-      #links .icon > svg{
+      #links .icon{
         color: #5160ff;
       }
       .heading{
@@ -114,10 +115,17 @@
     <div id="links"></div>
     <script>
       let link = "";
-      for (let i = 1; i <= 45; i++) {
-        link += "<a href='sp" + i + "/' target='blank'><div class='icon'><svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor' class='bi bi-link-45deg' viewBox='0 0 16 16'><path d='M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z'/><path d='M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z'/></svg></div>Sample Project " + i + "</a>";
-      }
+
+      const projectType = ["App Landing", "Blogging", "Business", "Business", "Business", "Cofee", "Colorful", "Fruit", "Ecommerce", "Ecommerce", "Ecommerce", "Ecommerce", "Education", "Event", "Flower", "Food", "Fruit", "GlassMorphism", "Vegetables", "Fitness Club", "Fitness", "Fitness", "Fitness", "Health Care", "Health Care", "Image Gallery", "Food Shop", "Portfolio", "Portfolio", "Portfolio", "Portfolio", "Task App", "Traveling", "Fitness", "Traveling", "Burger", "Christmas", "Christmas", "Coffee", "Mobile Shop", "Education", "Education", "Portfolio", "SEO Website", "Traveling"];
+
+      projectType.forEach(myFunction);
+
       document.getElementById("links").innerHTML = link;
+       
+      function myFunction(item, index) {
+        link += "<a href='sp" + (index+1) + "/' target='blank'><div class='icon'>" + (index+1) + "</div>" + item + "</a>";
+      }
+
     </script>
   </body>
 </html>
