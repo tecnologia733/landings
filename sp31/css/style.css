@@ -90,8 +90,8 @@ section{
     display: inline-block;
     margin-top: 1rem;
     padding:.8rem 3rem;
-    background:#222;
-    color:#fff;
+    background:#dddddd;
+    color:#222;
     font-size: 1.7rem;
     cursor: pointer;
 }
